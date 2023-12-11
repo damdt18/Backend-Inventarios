@@ -7,7 +7,7 @@ const {validarRolAdmin} = require('../middleware/validar-rol-admin');
 
 const router = Router();
 
-router.post('/',[validarJWT, validarRolAdmin], [
+router.post('/', [
   check('nombre', 'invalid.nombre').not().isEmpty(),
   check('email', 'invalid.email').isEmail(),
   check('password', 'invalid.password').not().isEmpty(),
